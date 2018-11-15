@@ -7,6 +7,22 @@ import "antd/dist/antd.css";
 const { Header } = Layout;
 const Search = Input.Search;
 
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
+    </Menu.Item>
+  </Menu>
+);
+
+
+
 class Navbaronly extends Component {
 
   render() {
@@ -33,22 +49,18 @@ class Navbaronly extends Component {
             onSearch={value => console.log(value)}
             enterButton
           />
-          
- 
-          
-            <div className="iconlist"  >
-            <Icon type="bell" className="iconbell" />
-            <Icon type="message" className="iconmsg" />
-            <Icon type="user" className="iconuser" />
+
+           <div className="iconlist" >
+          <Dropdown overlay={menu}>
+            <a className="iconbell" href="#">
+            <Icon type="bell" style={{ fontSize: '22px', color: '#FFFFFF' }}  />
+            <Icon type="message" className="iconmsg" style={{ fontSize: '22px', color: '#FFFFFF' }} />
+            <Icon type="user" className="iconuser" style={{ fontSize: '22px', color: '#FFFFFF' }}/>
+            </a>
+          </Dropdown>
           </div>
-          
-
-
 
           {/* <Menu.Item key="1"><Icon type="search" />Search</Menu.Item>  */}
-
-
-
 
         </Menu>
       </Header>
